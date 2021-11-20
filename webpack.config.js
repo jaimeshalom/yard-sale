@@ -14,11 +14,13 @@ module.exports = {
     alias: {
       '@components': path.resolve(__dirname, 'src/components/'),
       '@containers': path.resolve(__dirname, 'src/containers/'),
-      '@pages'     : path.resolve(__dirname, 'src/pages/'),
-      '@styles'    : path.resolve(__dirname, 'src/styles/'),
-      '@icons'     : path.resolve(__dirname, 'src/assets/icons/'),
-      '@logos'     : path.resolve(__dirname, 'src/assets/logos/'),
-    }
+      '@pages': path.resolve(__dirname, 'src/pages/'),
+      '@styles': path.resolve(__dirname, 'src/styles/'),
+      '@icons': path.resolve(__dirname, 'src/assets/icons/'),
+      '@logos': path.resolve(__dirname, 'src/assets/logos/'),
+      '@hooks': path.resolve(__dirname, 'src/hooks/'),
+      '@context': path.resolve(__dirname, 'src/context/'),
+    },
   },
   mode: 'development',
   module: {
@@ -28,23 +30,19 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-        }
+        },
       },
       {
         test: /\.html$/,
         use: [
           {
             loader: 'html-loader',
-          }
+          },
         ],
       },
       {
         test: /\.(sa|sc|c)ss$/i,
-        use: [
-          "style-loader",
-          "css-loader",
-          "sass-loader",
-        ],
+        use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -67,4 +65,4 @@ module.exports = {
     port: 3003,
     historyApiFallback: true,
   },
-}
+};

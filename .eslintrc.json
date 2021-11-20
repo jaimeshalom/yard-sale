@@ -1,0 +1,24 @@
+{
+  "title": "JSON schema for ESLint configuration files",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": ["prettier"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "strict": 0,
+    "indent": ["error", 2],
+    "semi": ["error", "never"]
+  }
+}
